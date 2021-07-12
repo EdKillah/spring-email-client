@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <title>Enviar correo</title>
+    <link href="https://bootswatch.com/5/flatly/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Postulate enviandonos un correo</h1>
+        <form id="form" class="mt-3" action="/email/send" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Tu correo: </label>
+                <p />
+                <input type="email" name="user-email"> <br/><br/>
+                <label>Por qué quieres trabajar con nosotros: </label>
+                <p />
+                <textarea type="text" name="user-body"  placeholder="Escribe acá" required rows="5" cols="50" style="overflow:auto;resize:none"></textarea>
+                <br/><br/>
+                <label>Hoja de vida: </label>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+        <script>
+            console.log("Esta funcionando");
+            const form = document.getElementById("form");
+            console.log("FORM: ",form);
+            form.addEventListener("submit", e => {
+                console.log("ENvio el foromulario");
+                window.location.replace("/form.html");
+            });
+        </script>
+    </div>
+</body>
+</html>
